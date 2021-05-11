@@ -1,0 +1,149 @@
+.form-container {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    justify-items: center;
+    grid-gap: 30px;
+    z-index: 1;
+    overflow: auto;
+    display: grid;
+
+    .recipe-form {
+        width: 460px;
+
+        input,
+        textarea,
+        button {
+            border: 0;
+            background: transparent;
+            font-family: "raleway", "san-serif";
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 5px 0;
+            border-bottom: 1px solid rgb(194, 194, 194);
+        }
+
+        textarea {
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid rgb(194, 194, 194);
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 15px;
+
+            &.btn {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+                padding-bottom: 30px;
+
+                input {
+                    cursor: pointer;
+                }
+            }
+
+            &.ingredients {
+                border: 1px #dc2430 dotted;
+                padding: 20px;
+                &:not(:last-of-type) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            grid-gap: 15px;
+
+            label {
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+            &.with-textarea {
+                grid-template-columns: 1fr;
+            }
+
+            .options {
+                display: flex;
+                align-items: center;
+                input {
+                    &[type="radio"] {
+                        width: 20px;
+                    }
+                }
+                label {
+                    &:not(:last-of-type) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .custom-group {
+            grid-gap: 15px;
+            display: grid;
+
+            &.col-3 {
+                grid-template-columns: repeat(3, 1fr);
+
+                input {
+                    text-align: center;
+                }
+            }
+
+            &.col-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        h6 {
+            font-size: 18px;
+            margin: 100px 0 30px 0;
+            background-color: #dc2430;
+            color: #fff;
+            padding: 10px 15px;
+        }
+
+        .form-btn {
+            background-color: #dc2430;
+            padding: 20px 30px;
+            text-transform: uppercase;
+            color: #fd838a;
+            font-weight: 800;
+            letter-spacing: 4px;
+            font-size: 13px;
+            border-radius: 6px;
+            transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+            &:hover {
+                color: #fff;
+            }
+            &.btn-cancel {
+                background: transparent;
+                border: 3px solid #dc2430;
+                color: #dc2430;
+
+                &:hover {
+                    background-color: #dc2430;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
